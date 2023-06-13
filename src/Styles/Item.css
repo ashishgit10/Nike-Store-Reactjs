@@ -1,0 +1,33 @@
+.card1{
+   max-width: 30%;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding:10px;
+    margin: 18px;
+    background: radial-gradient(circle,rgba(255,255,255,.7035189076) 50%,rgba(255,255,255,.1993172269) 100%);
+    box-shadow: 0 8px 20px #00000014;
+    transition: all .1s ease-in-out;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+.card-box{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.navbar-link{
+    display:contents;
+    
+} 
+.img1{
+    width:100%;
+    border-radius: 20px;
+}
+.for-bg{
+    max-width:22% !important;
+    background: linear-gradient(to bottom,#fcddff,#d6d6d6);
+    height: 100vh;
+    overflow-y: hidden;
+}

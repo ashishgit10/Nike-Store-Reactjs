@@ -1,0 +1,45 @@
+/*-------------------------------==================---------------------------------*/
+
+@media only screen and (max-width: 820px) {
+  .card-box , .navbar-link {
+    justify-content: center !important;
+  }
+  .card1 {
+    max-width: 28% !important;
+  }
+}
+
+/*-------------------------------==================---------------------------------*/
+@media only screen and (max-width: 768px) {
+}
+
+/*-------------------------------==================---------------------------------*/
+@media only screen and (max-width: 440px) {
+  .head {
+    z-index: 2 !important;
+  }
+  .bg1 {
+    height: 250vh !important;
+  }
+
+  .card1 {
+    max-width: 80% !important;
+    margin: 10px !important;
+  }
+}
+
+/*-------------------------------==================---------------------------------*/
+@media only screen and (max-width: 340px) {
+  .logo {
+    margin-inline: 10px !important;
+  }
+  ul {
+    margin-inline: 0px !important;
+  }
+  .bg1 {
+    height: 300vh !important;
+  }
+  .card1 {
+    max-width: 100% !important;
+  }
+}

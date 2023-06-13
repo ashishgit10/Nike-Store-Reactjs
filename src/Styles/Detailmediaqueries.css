@@ -1,0 +1,68 @@
+@media only screen and (max-width: 820px) {
+  .title {
+    margin-bottom: 10px !important;
+  }
+  .main2 {
+    justify-content: center !important;
+  }
+  .bigimg {
+    width: 40% !important;
+    height: 100% !important;
+  }
+  .bigimg > img {
+    height: 80% !important;
+  }
+  .thumb {
+    width: 80px !important;
+  }
+  .thumb > img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .addcartbtn {
+    font-size: 15px !important;
+    padding-inline: 6px !important;
+    padding-block: 5px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .circle {
+    width: 840px !important;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .circle {
+    width: 350px !important;
+  }
+  .main1 {
+    padding-top: 20px !important;
+  }
+
+  .bigimg {
+    width: 85% !important;
+    margin: 0px !important;
+  }
+  .detailbox {
+    margin: 0px 20px 20px 10px !important;
+    width: 100% !important;
+  }
+
+  .thumb {
+    width: 80px !important;
+  }
+}
+
+
+@media only screen and (max-width: 340px) {
+.circle{
+    width: 287px !important;
+}
+    .thumb{
+    width: 60px !important;
+}
+
+
+
+}
