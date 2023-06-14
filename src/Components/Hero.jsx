@@ -1,16 +1,19 @@
-import React from "react";
-import { NavLink } from 'react-router-dom'
+import React,{useEffect} from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Nikelogo from "../assets/nikeTX.png";
 import Backg from "./Backg";
-import { Button } from '../Styles/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../Styles/homemediaqueries.css';
+import { Button } from "../Styles/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../Styles/homemediaqueries.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const Wrapper = styled.section`
   .section {
     max-width: 1200px;
     min-height: 100vh;
-    margin:auto;
+    margin: auto;
   }
   .herobox {
     position: relative;
@@ -48,17 +51,20 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 500;
     z-index: 5;
   }
-/*   .datablock > p{
+  /*   .datablock > p{
     font-size:25px;
   } */
-
 `;
 
 const Hero = () => {
+  useEffect(() => {
+    Aos.init({duration : 1000});
+  }, []);
+
   return (
     <Wrapper>
       <Backg />
@@ -68,10 +74,17 @@ const Hero = () => {
             <span>NIKE</span>
           </div>
           <div className="logobox">
-            <img src={Nikelogo} alt="logo" className="logo" />
+            <img
+              src={Nikelogo}
+              alt="logo"
+              className="logo"
+              data-aos="zoom-in"
+            />
             <div className="datablock">
-              <p>Explore the new collections designed with<br></br>
-                comfort and style in mind</p>
+              <p>
+                Explore the new collections designed with<br></br>
+                comfort and style in mind
+              </p>
               <Button>
                 <NavLink to="/shop">Shop Now</NavLink>
                 <FontAwesomeIcon icon="fa-solid fa-link" />

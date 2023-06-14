@@ -31,3 +31,9 @@
     height: 100vh;
     overflow-y: hidden;
 }
+.productdata > h4 , span{
+    color:black;
+}
+.productdata > h4 {
+    margin-block: 5px;
+}
