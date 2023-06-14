@@ -5,7 +5,7 @@ import Nikelogo from "../assets/nikeTX.png";
 import Backg from "./Backg";
 import { Button } from "../Styles/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../Styles/homemediaqueries.css";
+import "../Styles/Homemediaqueries.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
