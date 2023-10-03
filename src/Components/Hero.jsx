@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Nikelogo from "../assets/nikeTX.png";
@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Styles/Homemediaqueries.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { useEffect, useState } from "react";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 const Wrapper = styled.section`
   .section {
@@ -61,36 +63,46 @@ const Wrapper = styled.section`
 `;
 
 const Hero = () => {
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    Aos.init({duration : 1000});
+    Aos.init({ duration: 1000 });
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3500);
   }, []);
-
   return (
     <Wrapper>
       <Backg />
       <div className="section">
         <div className="herobox">
-          <div className="hero">
-            <span>NIKE</span>
-          </div>
-          <div className="logobox">
-            <img
-              src={Nikelogo}
-              alt="logo"
-              className="logo"
-              data-aos="zoom-in"
-            />
-            <div className="datablock">
-              <p>
-                Explore the new collections designed with<br></br>
-                comfort and style in mind
-              </p>
-              <Button>
-                <NavLink to="/shop">Shop Now</NavLink>
-                <FontAwesomeIcon icon="fa-solid fa-link" />
-              </Button>
-            </div>
-          </div>
+          {loading ? (
+            <ScaleLoader color={"#151514"} loading={loading} size={100} />
+          ) : (
+            <>
+              <div className="hero">
+                <span>NIKE</span>
+              </div>
+              <div className="logobox">
+                <img
+                  src={Nikelogo}
+                  alt="logo"
+                  className="logo"
+                  data-aos="zoom-in"
+                />
+                <div className="datablock">
+                  <p>
+                    Explore the new collections designed with<br></br>
+                    comfort and style in mind
+                  </p>
+                  <Button>
+                    <NavLink to="/shop">Shop Now</NavLink>
+                    <FontAwesomeIcon icon="fa-solid fa-link" />
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </Wrapper>

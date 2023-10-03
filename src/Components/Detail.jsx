@@ -4,7 +4,8 @@ import styled from "styled-components";
 import Data from "../Data";
 import { useParams } from "react-router-dom"; // Import useParams
 import "../Styles/Detailmediaqueries.css";
-
+import { useState, useEffect } from "react";
+import ScaleLoader from "react-spinners/ScaleLoader";
 const Main = styled.div`
   background: linear-gradient(to bottom, #fcddff, #d6d6d6);
   height: 120vh;
@@ -99,12 +100,20 @@ const Detail = () => {
   if (!product) {
     return <div>Product not found</div>; // Handle if the product is not found
   }
-
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   return (
     <Main>
       <Backg />
       <div className="main1">
-        {
+        {loading ? (
+          <ScaleLoader color={"#151514"} loading={loading} size={100} />
+        ) : (
           <div className="main2" key={product.id}>
             <div className="bigimg">
               <img src={product.src[0]} />
@@ -132,7 +141,7 @@ const Detail = () => {
               <button className="addcartbtn">Add To Cart</button>
             </div>
           </div>
-        }
+        )}
       </div>
     </Main>
   );
