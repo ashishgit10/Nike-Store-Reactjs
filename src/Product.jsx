@@ -2,50 +2,53 @@ import React from "react";
 import Backg from "./Components/Backg";
 import { styled } from "styled-components";
 /* import s1 from '../src/assets/s1.jpg' */
-import Itembox from './Itembox';
-import './Styles/Shopmediaqueries.css'
+import Itembox from "./Itembox";
+import "./Styles/Shopmediaqueries.css";
 const Wrapper = styled.section`
-.bg1{
-    background: linear-gradient(to bottom,#fcddff,#d6d6d6);
+  .bg1 {
+    background: linear-gradient(to bottom, #fcddff, #d6d6d6);
     height: 100vh;
-}
-.shopbody{
-    height:100vh;
-    position:relative;
+  }
+  .shopbody {
+    height: 100vh;
+    position: relative;
     z-index: 999;
-}
-.medium{
+  }
+  .medium {
     max-width: 1200px;
     margin: auto;
-    
-}
+  }
 
-.img1{
-    width:100%;
+  .img1 {
+    width: 100%;
     border-radius: 8px;
-}
-`
+  }
+`;
 const Product = (props) => {
-    const { Products } = props;
+  const { Products } = props;
 
-    const linkto = `/detail/${Products.id}`;
-    console.log(Products)
-    return (<>
-        <Wrapper>
-            <div className="bg1">
-                <Backg />
-                <div className="shopbody">
-                    <div className="medium">
-                        <div className="card-box">
-                            {Products.map((product) => (
-                                    <Itembox key={product.id} product={product} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
+  const linkto = `/detail/${Products.id}`;
+  return (
+    <>
+      <Wrapper>
+        <div className="bg1">
+          <Backg />
+          <div className="shopbody">
+            <div className="medium">
+              <div className="card-box">
+                {Products.map((product) => (
+                  <Itembox
+                    key={product.id}
+                    product={product}
+                    linkto={`/detail/${Products.id}`}
+                  />
+                ))}
+              </div>
             </div>
-        </Wrapper>
+          </div>
+        </div>
+      </Wrapper>
     </>
-    )
-}
+  );
+};
 export default Product;
