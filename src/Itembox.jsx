@@ -10,6 +10,7 @@ export default function Itembox(props) {
   
   useEffect(() => {
     Aos.init();
+    <h1>loading....</h1>
   }, []);
   return (
     <NavLink className="navbar-link" to={linkto}>

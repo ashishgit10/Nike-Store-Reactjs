@@ -7,9 +7,9 @@ const Data = {
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. enim nemo veritatis aliquid eligendi quisquam vero? Esse, aliquid culpa.",
         "src": [
             "../assets/detail/s101.jpg",
-            "../assets/detail/s202.jpg",
-            "../assets/detail/s303.jpg",
-            "../assets/detail/s404.jpg"
+            "../assets/detail/s102.jpg",
+            "../assets/detail/s103.jpg",
+            "../assets/detail/s104.jpg"
         ],
     },
     {
@@ -18,10 +18,10 @@ const Data = {
         "price": "$ 299",
         "image": "../assets/s2.jpg",
         "src": [
-            "../assets/detail/s101.jpg",
+            "../assets/detail/s201.jpg",
             "../assets/detail/s202.jpg",
-            "../assets/detail/s303.jpg",
-            "../assets/detail/s404.jpg"
+            "../assets/detail/s203.jpg",
+            "../assets/detail/s204.jpg"
         ],
     },
     {
@@ -30,10 +30,10 @@ const Data = {
         "price": "$ 599",
         "image": "../assets/s3.jpg",
         "src": [
-            "../assets/detail/s101.jpg",
-            "../assets/detail/s202.jpg",
+            "../assets/detail/s301.jpg",
+            "../assets/detail/s302.jpg",
             "../assets/detail/s303.jpg",
-            "../assets/detail/s404.jpg"
+            "../assets/detail/s304.jpg"
         ],
     },
     {
@@ -42,9 +42,9 @@ const Data = {
         "price": "$ 449",
         "image": "../assets/s4.jpg",
         "src": [
-            "../assets/detail/s101.jpg",
-            "../assets/detail/s202.jpg",
-            "../assets/detail/s303.jpg",
+            "../assets/detail/s401.jpg",
+            "../assets/detail/s402.jpg",
+            "../assets/detail/s403.jpg",
             "../assets/detail/s404.jpg"
         ],
     },
