@@ -19,7 +19,7 @@ const Main = styled.div`
   }
   .main1 {
     padding-top: 60px;
-    max-width: 1200px;
+    max-width: 90%;
     margin: auto;
     position: relative;
     display: flex;
@@ -41,7 +41,7 @@ const Main = styled.div`
   }
   .detailbox {
     width: 46%;
-    padding: 5px 20px 20px 20px;
+    padding: 5px 20px 20px 0px;
   }
   .title {
     font-size: 50px;
@@ -80,6 +80,21 @@ const Main = styled.div`
     padding-inline: 20px;
     padding-block: 10px;
   }
+  .notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+  }
+  .show {
+    display: block;
+  }
 `;
 
 const Detail = () => {
@@ -87,15 +102,18 @@ const Detail = () => {
   const { productId } = useParams();
   const product = Data.Products.find((item) => item.id === productId);
   const [loading, setLoading] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
   const addToCart = () => {
     dispatch(add(product));
+    setShowNotification(true);
+    setTimeout(() => setShowNotification(false), 3000); // Hide notification after 3 seconds
   };
 
   if (!product) {
@@ -126,6 +144,10 @@ const Detail = () => {
             </div>
           </>
         )}
+      </div>
+      {/* Notification */}
+      <div className={`notification ${showNotification ? 'show' : ''}`}>
+        Item added to cart
       </div>
     </Main>
   );
