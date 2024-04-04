@@ -80,18 +80,12 @@ const Hero = () => {
             <span>NIKE</span>
           </div>
           <div className="logobox">
-            {loading ? (
-              <ScaleLoader color={"#151514"} loading={loading} size={100} />
-            ) : (
-              <>
                 <img
                   src={Nikelogo}
                   alt="logo"
                   className="logo"
                   data-aos="zoom-in"
                 />
-              </>
-            )}
             <div className="datablock">
               <p>
                 Explore the new collections designed with<br></br>
