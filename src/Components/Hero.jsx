@@ -65,44 +65,45 @@ const Wrapper = styled.section`
 const Hero = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 500 });
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 3500);
+    }, 1500);
   }, []);
   return (
     <Wrapper>
       <Backg />
       <div className="section">
         <div className="herobox">
-          {loading ? (
-            <ScaleLoader color={"#151514"} loading={loading} size={100} />
-          ) : (
-            <>
-              <div className="hero">
-                <span>NIKE</span>
-              </div>
-              <div className="logobox">
+          <div className="hero">
+            <span>NIKE</span>
+          </div>
+          <div className="logobox">
+            {loading ? (
+              <ScaleLoader color={"#151514"} loading={loading} size={100} />
+            ) : (
+              <>
                 <img
                   src={Nikelogo}
                   alt="logo"
                   className="logo"
                   data-aos="zoom-in"
                 />
-                <div className="datablock">
-                  <p>
-                    Explore the new collections designed with<br></br>
-                    comfort and style in mind
-                  </p>
-                  <Button>
-                    <NavLink to="/shop">Shop Now</NavLink>
-                    <FontAwesomeIcon icon="fa-solid fa-link" />
-                  </Button>
-                </div>
-              </div>
-            </>
-          )}
+              </>
+            )}
+            <div className="datablock">
+              <p>
+                Explore the new collections designed with<br></br>
+                comfort and style in mind
+              </p>
+              <Button>
+                <NavLink to="/shop">Shop Now</NavLink>
+                <FontAwesomeIcon icon="fa-solid fa-link" />
+              </Button>
+            </div>
+          </div>
+
         </div>
       </div>
     </Wrapper>

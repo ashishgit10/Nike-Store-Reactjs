@@ -4,6 +4,9 @@ import styled from "styled-components";
 
 const Footmain = styled.div`
   background-color: #d6d6d6;
+  z-index: 999;
+  position: relative;
+  top:100%;
   .padding {
     padding: 30px;
   }

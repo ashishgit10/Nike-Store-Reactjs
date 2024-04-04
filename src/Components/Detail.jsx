@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Backg from "./Backg";
 import styled from "styled-components";
 import Data from "../Data";
-import { useParams } from "react-router-dom"; // Import useParams
+import { useParams } from "react-router-dom";
 import "../Styles/Detailmediaqueries.css";
-import { useState, useEffect } from "react";
 import ScaleLoader from "react-spinners/ScaleLoader";
+import { useDispatch } from 'react-redux';
+import { add } from "../stores/CartSlice";
+
 const Main = styled.div`
   background: linear-gradient(to bottom, #fcddff, #d6d6d6);
   height: 120vh;
@@ -19,10 +21,10 @@ const Main = styled.div`
     padding-top: 60px;
     max-width: 1200px;
     margin: auto;
-    height: 100vh;
     position: relative;
+    display: flex;
     z-index: 999;
-    height: 100vh;
+ 
   }
   .main2 {
     display: flex;
@@ -39,7 +41,6 @@ const Main = styled.div`
   }
   .detailbox {
     width: 46%;
-    margin: 0px 20px 20px 20px;
     padding: 5px 20px 20px 20px;
   }
   .title {
@@ -58,16 +59,6 @@ const Main = styled.div`
   .description {
     font-size: 18px;
     font-family: "lato", sans-serif;
-    margin-bottom: 23px;
-  }
-  .rate {
-    display: flex;
-    align-items: center;
-    margin-bottom: 23px;
-  }
-  .size {
-    display: flex;
-    align-items: center;
     margin-bottom: 23px;
   }
   .thumb {
@@ -92,55 +83,48 @@ const Main = styled.div`
 `;
 
 const Detail = () => {
-  const { Products } = Data;
-  const { productId } = useParams(); // Get the productId from route params
-
-  const product = Products.find((item) => item.id === productId); // Find the product with the matching ID
-
-  if (!product) {
-    return <div>Product not found</div>; // Handle if the product is not found
-  }
+  const dispatch = useDispatch();
+  const { productId } = useParams();
+  const product = Data.Products.find((item) => item.id === productId);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
   }, []);
+
+  const addToCart = () => {
+    dispatch(add(product));
+  };
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+
   return (
     <Main>
       <Backg />
       <div className="main1">
         {loading ? (
-          <ScaleLoader color={"#151514"} loading={loading} size={100} />
+          <ScaleLoader color="#151514" loading={loading} size={100} />
         ) : (
-          <div className="main2" key={product.id}>
+          <>
             <div className="bigimg">
-              <img src={product.src[0]} />
+              <img src={product.src[0]} alt={product.name} />
             </div>
-
             <div className="detailbox">
               <div className="title">{product.name}</div>
               <h4>Description:</h4>
               <div className="description">{product.description}</div>
-              <div className="rate">
-                <h5>Rating :</h5>&nbsp;*****(50)
-              </div>
-              <div className="size">
-                <h5>Size :</h5>
-                <div className="radio">
-                  <input type="radio" />
-                  <input type="radio" />
-                </div>
-              </div>
               <div className="thumb">
                 {product.src.map((img, index) => (
-                  <img src={img} key={index} onClick={() => handletab(index)} />
+                  <img src={img} key={index} />
                 ))}
               </div>
-              <button className="addcartbtn">Add To Cart</button>
+              <button className='addcartbtn' onClick={addToCart}>Add to cart</button>
             </div>
-          </div>
+          </>
         )}
       </div>
     </Main>

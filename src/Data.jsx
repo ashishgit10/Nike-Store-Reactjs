@@ -1,3 +1,4 @@
+
 const Data = {
     Products: [{
         "id": "1",
@@ -17,6 +18,8 @@ const Data = {
         "name": "Nike Sport Small",
         "price": "$ 299",
         "image": "../assets/s2.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. enim nemo veritatis aliquid eligendi quisquam vero? Esse, aliquid culpa.",
+
         "src": [
             "../assets/detail/s201.jpg",
             "../assets/detail/s202.jpg",
@@ -29,6 +32,8 @@ const Data = {
         "name": "Nike Air Max",
         "price": "$ 599",
         "image": "../assets/s3.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. enim nemo veritatis aliquid eligendi quisquam vero? Esse, aliquid culpa.",
+
         "src": [
             "../assets/detail/s301.jpg",
             "../assets/detail/s302.jpg",
@@ -41,6 +46,8 @@ const Data = {
         "name": "Nike Fantasy",
         "price": "$ 449",
         "image": "../assets/s4.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. enim nemo veritatis aliquid eligendi quisquam vero? Esse, aliquid culpa.",
+
         "src": [
             "../assets/detail/s401.jpg",
             "../assets/detail/s402.jpg",
@@ -53,6 +60,8 @@ const Data = {
         "name": "Nike Infinite Sky",
         "price": "$ 249",
         "image": "../assets/s5.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. enim nemo veritatis aliquid eligendi quisquam vero? Esse, aliquid culpa.",
+
         "src": [
             "../assets/detail/s101.jpg",
             "../assets/detail/s202.jpg",
@@ -65,6 +74,8 @@ const Data = {
         "name": "Nike Sport React",
         "price": "$ 299",
         "image": "../assets/s6.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. enim nemo veritatis aliquid eligendi quisquam vero? Esse, aliquid culpa.",
+
         "src": [
             "../assets/detail/s101.jpg",
             "../assets/detail/s202.jpg",
@@ -77,6 +88,8 @@ const Data = {
         "name": "Nike Sport Lutus",
         "price": "$ 449",
         "image": "../assets/s7.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. enim nemo veritatis aliquid eligendi quisquam vero? Esse, aliquid culpa.",
+
         "src": [
             "../assets/detail/s101.jpg",
             "../assets/detail/s202.jpg",
@@ -89,6 +102,8 @@ const Data = {
         "name": "Nike Sky",
         "price": "$ 349",
         "image": "../assets/s8.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. enim nemo veritatis aliquid eligendi quisquam vero? Esse, aliquid culpa.",
+
         "src": [
             "../assets/detail/s101.jpg",
             "../assets/detail/s202.jpg",
@@ -101,6 +116,8 @@ const Data = {
         "name": "Nike Infinity Sport",
         "price": "$ 599",
         "image": "../assets/s9.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. enim nemo veritatis aliquid eligendi quisquam vero? Esse, aliquid culpa.",
+
         "src": [
             "../assets/detail/s101.jpg",
             "../assets/detail/s202.jpg",

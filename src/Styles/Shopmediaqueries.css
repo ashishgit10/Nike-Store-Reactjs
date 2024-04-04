@@ -18,9 +18,6 @@
   .head {
     z-index: 2 !important;
   }
-  .bg1 {
-    height: 250vh !important;
-  }
 
   .card1 {
     max-width: 80% !important;
